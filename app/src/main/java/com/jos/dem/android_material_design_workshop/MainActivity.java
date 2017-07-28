@@ -22,6 +22,9 @@ public class MainActivity extends Activity implements MyAdapter.ItemClickListene
     List<String> dataset = new ArrayList<String>();
     dataset.add("josdem");
     dataset.add("skuarch");
+    dataset.add("tgrip");
+    dataset.add("erich");
+    dataset.add("martinvillegas");
 
     RecyclerView recyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
     recyclerView.setLayoutManager(new LinearLayoutManager(this));
