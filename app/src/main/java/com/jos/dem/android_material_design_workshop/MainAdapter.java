@@ -36,6 +36,14 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
     return dataset.size();
   }
 
+  public String getItem(int id) {
+    return dataset.get(id);
+  }
+
+  public void setClickListener(ItemClickListener itemClickListener) {
+    this.clickListener = itemClickListener;
+  }
+
   public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
     public TextView textView;
 
@@ -49,14 +57,6 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
     public void onClick(View view) {
       clickListener.onItemClick(view, getAdapterPosition());
     }
-  }
-
-  public String getItem(int id) {
-    return dataset.get(id);
-  }
-
-  public void setClickListener(ItemClickListener itemClickListener) {
-    this.clickListener = itemClickListener;
   }
 
 }
