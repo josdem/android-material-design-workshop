@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/home/josdem/Projects/android-material-design-workshop/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="7d60532ec06f4936687065609347b9b7a186ebb7">
+        <dex dex="/home/josdem/Projects/android-material-design-workshop/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_caca0e58b5f4f40f8ddfc25a89d236c0931c9683/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/josdem/Projects/android-material-design-workshop/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="/home/josdem/Projects/android-material-design-workshop/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_7d1570762c552ad26d0cb8a31b48d2bcde1869e4/classes.dex" />
+    </item>
+
+</items>
