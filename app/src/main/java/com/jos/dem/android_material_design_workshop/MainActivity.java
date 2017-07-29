@@ -10,7 +10,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends Activity implements MainAdapter.ItemClickListener {
+public class MainActivity extends Activity implements ItemClickListener {
 
   private MainAdapter adapter;
 

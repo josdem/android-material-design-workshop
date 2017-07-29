@@ -28,7 +28,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
 
   @Override
   public void onBindViewHolder(ViewHolder holder, int position) {
-    holder.myTextView.setText(dataset.get(position));
+    holder.textView.setText(dataset.get(position));
   }
 
   @Override
@@ -37,17 +37,17 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
   }
 
   public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-    public TextView myTextView;
+    public TextView textView;
 
     public ViewHolder(View itemView) {
       super(itemView);
-      myTextView = (TextView) itemView.findViewById(R.id.nicknames);
+      textView = (TextView) itemView.findViewById(R.id.nicknames);
       itemView.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View view) {
-      if (clickListener != null) clickListener.onItemClick(view, getAdapterPosition());
+      clickListener.onItemClick(view, getAdapterPosition());
     }
   }
 
@@ -57,10 +57,6 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
 
   public void setClickListener(ItemClickListener itemClickListener) {
     this.clickListener = itemClickListener;
-  }
-
-  public interface ItemClickListener {
-    void onItemClick(View view, int position);
   }
 
 }
