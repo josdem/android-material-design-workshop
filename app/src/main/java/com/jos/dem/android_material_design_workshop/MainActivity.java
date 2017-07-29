@@ -10,9 +10,9 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends Activity implements MyAdapter.ItemClickListener {
+public class MainActivity extends Activity implements MainAdapter.ItemClickListener {
 
-  private MyAdapter adapter;
+  private MainAdapter adapter;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -26,17 +26,17 @@ public class MainActivity extends Activity implements MyAdapter.ItemClickListene
     dataset.add("erich");
     dataset.add("martinvillegas");
 
-    RecyclerView recyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
+    RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
     recyclerView.setLayoutManager(new LinearLayoutManager(this));
     recyclerView.setHasFixedSize(true);
-    adapter = new MyAdapter(this, dataset);
+    adapter = new MainAdapter(this, dataset);
     adapter.setClickListener(this);
     recyclerView.setAdapter(adapter);
   }
 
   @Override
   public void onItemClick(View view, int position) {
-    Toast.makeText(this, "You clicked " + adapter.getItem(position) + " on row number " + position, Toast.LENGTH_SHORT).show();
+    Toast.makeText(this, "You clicked " + adapter.getItem(position), Toast.LENGTH_SHORT).show();
   }
 
 }

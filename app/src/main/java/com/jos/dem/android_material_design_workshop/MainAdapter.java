@@ -9,19 +9,19 @@ import android.widget.TextView;
 
 import java.util.List;
 
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
+public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
   private List<String> dataset;
   private LayoutInflater inflater;
   private ItemClickListener clickListener;
 
-  public MyAdapter(Context context, List<String> dataset) {
+  public MainAdapter(Context context, List<String> dataset) {
     this.inflater = LayoutInflater.from(context);
     this.dataset = dataset;
   }
 
   @Override
   public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-    View view = inflater.inflate(R.layout.my_text_view, parent, false);
+    View view = inflater.inflate(R.layout.recycler_view, parent, false);
     ViewHolder viewHolder = new ViewHolder(view);
     return viewHolder;
   }
