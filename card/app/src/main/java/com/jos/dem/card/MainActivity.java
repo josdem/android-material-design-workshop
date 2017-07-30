@@ -1,16 +1,19 @@
 package com.jos.dem.card;
 
+import android.app.Activity;
+import android.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 
 import com.jos.dem.card.model.Fruit;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
 
   private MainAdapter adapter;
 
@@ -19,19 +22,19 @@ public class MainActivity extends AppCompatActivity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
 
-    RecyclerView recyclerView = (RecyclerView) findViewById(R.id.card_view);
-    recyclerView.setHasFixedSize(true);
+    RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
     recyclerView.setLayoutManager(new LinearLayoutManager(this));
-    adapter = new MainAdapter(getDataSet());
-
+    recyclerView.setHasFixedSize(true);
+    adapter = new MainAdapter(this, getDataSet());
+    recyclerView.setAdapter(adapter);
   }
 
   private List<Fruit> getDataSet() {
     List<Fruit> fruits = new ArrayList<Fruit>();
-    fruits.add(new Fruit(0, "Lime"));
-    fruits.add(new Fruit(1, "Apple"));
-    fruits.add(new Fruit(2, "Pineaple"));
-    fruits.add(new Fruit(3, "Melon"));
+    fruits.add(new Fruit(R.drawable.lime, "Lime"));
+    fruits.add(new Fruit(R.drawable.apple, "Apple"));
+    fruits.add(new Fruit(R.drawable.watermelon, "Watermelon"));
+    fruits.add(new Fruit(R.drawable.pear, "Pear"));
     return fruits;
   }
 
