@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -23,8 +24,7 @@ public class MainActivity extends Activity {
     setContentView(R.layout.activity_main);
 
     RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
-    recyclerView.setLayoutManager(new LinearLayoutManager(this));
-    recyclerView.setHasFixedSize(true);
+    recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
     adapter = new MainAdapter(this, getDataSet());
     recyclerView.setAdapter(adapter);
   }

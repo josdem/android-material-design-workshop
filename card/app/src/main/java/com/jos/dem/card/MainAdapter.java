@@ -24,16 +24,15 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
 
   @Override
   public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-    View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_view, parent, false);
-    ViewHolder viewHolder = new ViewHolder(view);
-    return viewHolder;
+    View view = LayoutInflater.from(context).inflate(R.layout.card_view, parent, false);
+    return new ViewHolder(view);
   }
 
   @Override
   public void onBindViewHolder(ViewHolder holder, int position) {
     Fruit fruit = dataset.get(position);
     holder.name.setText(fruit.getName());
-    Glide.with(context).load(fruit.getThumbnail()).into(holder.thumbnail);
+    holder.thumbnail.setImageResource(fruit.getThumbnail());
   }
 
   @Override
