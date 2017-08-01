@@ -28,10 +28,10 @@ public class MainActivity extends AppCompatActivity implements ItemClickListener
 
   private List<Fruit> getDataSet() {
     List<Fruit> fruits = new ArrayList<Fruit>();
-    fruits.add(new Fruit(R.drawable.lime, "Lime"));
-    fruits.add(new Fruit(R.drawable.apple, "Apple"));
-    fruits.add(new Fruit(R.drawable.watermelon, "Watermelon"));
-    fruits.add(new Fruit(R.drawable.pear, "Pear"));
+    fruits.add(new Fruit("Lime", R.drawable.lime));
+    fruits.add(new Fruit("Apple", R.drawable.apple));
+    fruits.add(new Fruit("Watermelon", R.drawable.watermelon));
+    fruits.add(new Fruit("Pear", R.drawable.pear));
     return fruits;
   }
 

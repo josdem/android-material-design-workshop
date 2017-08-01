@@ -1,11 +1,10 @@
 package com.jos.dem.card;
 
 public class Fruit {
-
   private String name;
   private int thumbnail;
 
-  public Fruit(int thumbnail, String name) {
+  public Fruit(String name, int thumbnail) {
     this.name = name;
     this.thumbnail = thumbnail;
   }
@@ -25,5 +24,4 @@ public class Fruit {
   public void setThumbnail(int thumbnail) {
     this.thumbnail = thumbnail;
   }
-
 }
