@@ -14,7 +14,7 @@ import com.jos.dem.card.model.Fruit;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends Activity {
+public class MainActivity extends AppCompatActivity {
 
   private MainAdapter adapter;
 
