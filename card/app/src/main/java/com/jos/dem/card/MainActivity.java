@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity implements ItemClickListener
     setContentView(R.layout.activity_main);
 
     RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
-    recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
+    recyclerView.setLayoutManager(new GridLayoutManager(this, 2, GridLayoutManager.VERTICAL, false));
     adapter = new MainAdapter(this, getDataSet());
     adapter.setClickListener(this);
     recyclerView.setAdapter(adapter);
