@@ -1,20 +1,16 @@
 package com.jos.dem.card;
 
-import android.app.Activity;
-import android.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
-
-import com.jos.dem.card.model.Fruit;
+import android.view.View;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements ItemClickListener {
 
   private MainAdapter adapter;
 
@@ -26,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
     recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
     adapter = new MainAdapter(this, getDataSet());
+    adapter.setClickListener(this);
     recyclerView.setAdapter(adapter);
   }
 
@@ -36,6 +33,11 @@ public class MainActivity extends AppCompatActivity {
     fruits.add(new Fruit(R.drawable.watermelon, "Watermelon"));
     fruits.add(new Fruit(R.drawable.pear, "Pear"));
     return fruits;
+  }
+
+  @Override
+  public void onItemClick(View view, int position) {
+    Toast.makeText(this, "You clicked " + adapter.getItem(position), Toast.LENGTH_SHORT).show();
   }
 
 }

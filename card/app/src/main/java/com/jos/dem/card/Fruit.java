@@ -1,4 +1,4 @@
-package com.jos.dem.card.model;
+package com.jos.dem.card;
 
 public class Fruit {
 

@@ -8,13 +8,12 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.jos.dem.card.model.Fruit;
-
 import java.util.List;
 
 public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
   private List<Fruit> dataset;
   private Context context;
+  private ItemClickListener clickListener;
 
   public MainAdapter(Context context, List<Fruit> dataset) {
     this.context = context;
@@ -39,7 +38,15 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
     return dataset.size();
   }
 
-  public class ViewHolder extends RecyclerView.ViewHolder {
+  public String getItem(int position) {
+    return dataset.get(position).getName();
+  }
+
+  public void setClickListener(ItemClickListener itemClickListener) {
+    this.clickListener = itemClickListener;
+  }
+
+  public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
     public TextView name;
     public ImageView thumbnail;
 
@@ -47,6 +54,12 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
       super(itemView);
       name = (TextView) itemView.findViewById(R.id.name);
       thumbnail = (ImageView) itemView.findViewById(R.id.thumbnail);
+      itemView.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View view) {
+      clickListener.onItemClick(view, getAdapterPosition());
     }
   }
 
